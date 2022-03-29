@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./Home";
 import About from "./About";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import NavBar from "./NavBar";
 
 function App() {
 
@@ -20,14 +21,15 @@ fetch('http://localhost:9292/')
   return (
     <div className="App">
       <BrowserRouter>
-        <nav>
+        {/* <nav>
           <h1 style={{ color: "cornsilk" }}>SAIL</h1>
 
           <Link to="/about">About</Link>
-        </nav>
+        </nav> */}
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/about" element={<About />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
