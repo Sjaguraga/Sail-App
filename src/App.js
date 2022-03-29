@@ -5,6 +5,18 @@ import About from "./About";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 function App() {
+
+
+fetch('http://localhost:9292/')
+.then(resp => resp.json())
+.then(Box_data => {
+  console.log(Box_data) 
+})
+
+  return (
+    <div className="App">
+      <NavBar/>
+
   return (
     <div className="App">
       <BrowserRouter>
