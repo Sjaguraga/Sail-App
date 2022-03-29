@@ -5,12 +5,34 @@ import React from "react";
 function Home() {
   return (
     <>
-      <main>
-        <h2>Welcome to the homepage!</h2>
-        <p>You can do this, I believe in you.</p>
-      </main>
+      <div className="flexbox-container">
+        <div className="flexbox-item" id='item1'>
+          <p className="HomeText">Body</p>
+          <button>Upvote</button>
+        </div>
+
+        <div className="flexbox-item" id= 'item2'>
+          <p className="HomeText">Mind</p>
+          <button>Upvote</button>
+        </div>
+      </div>
+      
+      <div className="flexbox-container">
+
+        <div className="flexbox-item" id='item3'>
+          <p className="HomeText">Heart</p>
+          <button>Upvote</button>
+        </div>
+
+        <div className="flexbox-item" id='item4'>
+          <p className="HomeText">Soul</p>
+          <button>Upvote</button>
+        </div>
+
+      </div>
+    
     </>
-  );
+  )
 }
 
 export default Home
