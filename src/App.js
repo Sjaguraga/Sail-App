@@ -6,17 +6,11 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import NavBar from "./NavBar";
 
 function App() {
-
-
-fetch('http://localhost:9292/')
-.then(resp => resp.json())
-.then(Box_data => {
-  console.log(Box_data) 
-})
-
-  return (
-    <div className="App">
-      <NavBar/>
+  fetch("http://localhost:9292/")
+    .then((resp) => resp.json())
+    .then((Box_data) => {
+      console.log(Box_data);
+    });
 
   return (
     <div className="App">
