@@ -1,5 +1,16 @@
 import React from "react";
 
-export const About = () => {
-  return <div>About</div>;
-};
+
+
+function About() {
+  return (
+    <>
+      <main>
+        <h2>Who are we?</h2>
+        <p>That feels like an existential question, don't you think?</p>
+      </main>
+    </>
+  );
+}
+
+export default About
