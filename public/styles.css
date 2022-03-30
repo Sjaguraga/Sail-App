@@ -1,6 +1,10 @@
-.flexbox-container {
+#Sail_Text {
+  color:rgb(241, 220, 132);
+}
+
+#MasterDiv {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .flexbox-item {
@@ -13,7 +17,11 @@
   font-size: 240%;
 }
 
-#item1,
+/* #item1,
 #item2 {
-  margin-top: 17vh;
+  margin-top: 11vh;
+} */
+
+.upvotes {
+  font-size:50%;
 }

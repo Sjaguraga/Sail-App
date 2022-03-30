@@ -1,33 +1,42 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import Box from "./Box";
+// import { Link } from "react-router-dom"
+
+
 
 function Home() {
+  const [boxes, setBoxes] = useState([])
+
+  useEffect(()=> {
+    fetch("http://localhost:9292/boxes")
+    .then(resp => resp.json())
+    .then(data => {
+      setBoxes(data)
+    })
+    },[])
+
+
+    
+    let mappedBoxes = boxes.map(box => {
+      return (
+        <Box 
+        key={box.id}
+        data={box}
+        box_id = {box.id}
+        />
+      ) 
+    })
+  
+
   return (
     <>
-      <div className="flexbox-container">
-        <div className="flexbox-item" id="item1">
-          <p className="HomeText">Body</p>
-          <button>Upvote</button>
-        </div>
+    <div id="MasterDiv">
+    {mappedBoxes}
+    </div>
+  
 
-        <div className="flexbox-item" id="item2">
-          <p className="HomeText">Mind</p>
-          <button>Upvote</button>
-        </div>
-      </div>
-
-      <div className="flexbox-container">
-        <div className="flexbox-item" id="item3">
-          <p className="HomeText">Heart</p>
-          <button>Upvote</button>
-        </div>
-
-        <div className="flexbox-item" id="item4">
-          <p className="HomeText">Soul</p>
-          <button>Upvote</button>
-        </div>
-      </div>
     </>
   );
 }
 
-export default Home;
+export default Home
