@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import { Link } from "react-router-dom"
+
 
 function Box({data, box_id}) {
     const [upvotes, setUpvotes] = useState(data.upvotes)
@@ -26,15 +28,11 @@ function Box({data, box_id}) {
             setUpvotes(upvotes -1)
     }
 
-    function handleRedirect () {
-        console.log("send me to my page plz")
-    }
-
 
   return (
     <>
         <div className="flexbox-item" id={`item${box_id}`}>
-          <p onClick={handleRedirect} className="Box_Title">{data.title}</p>
+        <Link to="/comments_list"> <p className="Box_Title">{data.title}</p> </Link>
           <p className='upvotes'>{upvotes}</p>
           <button onClick={handleUpvote}>Upvote</button>
           <button onClick={handleDownvote}>Downvote</button>
