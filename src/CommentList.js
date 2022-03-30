@@ -16,31 +16,12 @@ function CommentList() {
     console.log(...todos);
   };
 
-  const updateTodo = (todoId, newValue) => {
-    if (!newValue.text || /^\s*$/.test(newValue.text)) {
-      return;
-    }
-
-    setTodos((prev) =>
-      prev.map((item) => (item.id === todoId ? newValue : item))
-    );
-  };
-
   const removeTodo = (id) => {
     const removedArr = [...todos].filter((todo) => todo.id !== id);
 
     setTodos(removedArr);
   };
 
-  const completeTodo = (id) => {
-    let updatedTodos = todos.map((todo) => {
-      if (todo.id === id) {
-        todo.isComplete = !todo.isComplete;
-      }
-      return todo;
-    });
-    setTodos(updatedTodos);
-  };
 
   return (
     <>
@@ -48,9 +29,9 @@ function CommentList() {
       <Comments onSubmit={addTodo} />
       <Details
         todos={todos}
-        completeTodo={completeTodo}
+        // completeTodo={completeTodo}
         removeTodo={removeTodo}
-        updateTodo={updateTodo}
+        // updateTodo={updateTodo}
       />
     </>
   );
