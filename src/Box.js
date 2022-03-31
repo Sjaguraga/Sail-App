@@ -7,12 +7,12 @@ function Box({data, box_id}) {
 
     function handleUpvote () {
 
-      fetch(`http://localhost:9292/upvote/${box_id}`, {
-      method: "PATCH",
-      headers: {
-          "Content-Type": "application/json"
-      },
-  })
+    fetch(`http://localhost:9292/upvote/${box_id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
      
      setUpvotes(upvotes+1)
 
@@ -32,7 +32,7 @@ function Box({data, box_id}) {
   return (
     <>
         <div className="flexbox-item" id={`item${box_id}`}>
-        <Link to="/comments_list"> <p className="Box_Title">{data.title}</p> </Link>
+        <Link to={`/box/${box_id}`}> <p className="Box_Title">{data.title}</p> </Link>
           <p className='upvotes'>{upvotes}</p>
           <button onClick={handleUpvote}>Upvote</button>
           <button onClick={handleDownvote}>Downvote</button>

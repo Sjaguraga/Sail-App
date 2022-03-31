@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Home from "./Home";
 import About from "./About";
+import BoxComment from "./BoxComment";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./NavBar";
 // import Details from "./Details";
@@ -17,6 +18,7 @@ function App() {
 
         <Route path="/about" element={<About />} />
 
+        <Route path="/box/:id" element={<BoxComment />} />
         <Route path="/comments_list" element={<CommentList />} />
         <Route path="/comments" element={<CommentList />} />
       </Routes>

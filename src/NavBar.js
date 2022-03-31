@@ -1,14 +1,12 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import { RiSailboatLine } from "react-icons/ri";
 
 function NavBar() {
   return (
     <>
       <nav>
-        <h1 style={{ color: "cornsilk" }}>
-          SAIL <RiSailboatLine />
-        </h1>
+       <Link to="/"><h1>SAIL <RiSailboatLine /></h1> </Link>
         <NavLink className="nav-link" to="about">
           About
         </NavLink>
