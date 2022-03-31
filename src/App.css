@@ -71,8 +71,6 @@ h1 {
   border: 2px solid #000000;
   outline: none;
   width: 320px;
-  background: transparent;
-  color: #fff;
 }
 
 .todo-input::placeholder {
@@ -165,6 +163,10 @@ h1 {
 .delete-icon {
   margin-right: 5px;
   color: rgb(138, 8, 8);
+}
+
+.delete-icon:hover {
+  cursor: pointer;
 }
 
 .edit-icon {
