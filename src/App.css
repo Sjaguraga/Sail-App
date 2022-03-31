@@ -180,4 +180,19 @@ h1 {
 #subjectTitle {
   margin: 1.2%;
   font-size: 210%;
+<<<<<<< HEAD
+=======
+}
+
+.By {
+  background: linear-gradient(
+    90deg,
+    rgb(255, 248, 220) 0%,
+    rgba(255, 248, 220, 0.459) 100%
+  );
+  color: black;
+  width: fit-content;
+  margin-left:28%;
+  margin-bottom: -4px;
+>>>>>>> 2ab107c06f50a554fdbbcce07ffe8fd9889cfc34
 }

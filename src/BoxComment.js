@@ -30,8 +30,12 @@ function BoxComment(){
   useEffect(() => {
     fetch(`http://localhost:9292/comments/${id}`)
     .then(resp => resp.json())
-    .then(setComments)
+    .then(data => {
+      setComments(data)
+    })
   },[]);
+
+  
 
   function handleChange(event) {
     setNewCommentText(event.target.value)

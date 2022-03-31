@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+=======
+import React,{useState} from 'react'
+import { Link } from "react-router-dom"
+>>>>>>> 2ab107c06f50a554fdbbcce07ffe8fd9889cfc34
 import { BiUpvote } from "react-icons/bi";
 import { BiDownvote } from "react-icons/bi";
 
