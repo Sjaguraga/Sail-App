@@ -1,5 +1,6 @@
 body {
   background-image: url("../images/6581520-2.jpg");
+  background-size: cover;
 }
 
 .App {
@@ -16,7 +17,8 @@ nav {
 }
 
 nav a {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-family: "Courier New", Courier, monospace;
   text-decoration: none;
   font-size: large;
 }
@@ -52,7 +54,7 @@ nav a {
 
 h1 {
   margin: 32px 0;
-  color: #fff;
+  color: rgb(222, 202, 121);
   font-size: 24px;
 }
 
@@ -90,6 +92,7 @@ h1 {
   );
   color: #fff;
   text-transform: capitalize;
+  font-family: sans-serif;
 }
 
 .todo-input.edit {
