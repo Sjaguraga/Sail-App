@@ -178,7 +178,17 @@ h1 {
 #subjectTitle {
   margin:1.2%;
   font-size: 210%;
+}
 
-
+.By {
+  background: linear-gradient(
+    90deg,
+    rgb(255, 248, 220) 0%,
+    rgba(255, 248, 220, 0.459) 100%
+  );
+  color: black;
+  width: fit-content;
+  margin-left:28%;
+  margin-bottom: -4px;
 }
 
