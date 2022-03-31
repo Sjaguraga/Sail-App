@@ -1,11 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
-import { RiCloseCircleLine } from "react-icons/ri";
+import Notes from './Notes';
+import { v4 as uuidv4 } from "uuid";
+
 
 function BoxComment(){
   const [comments, setComments] = useState([]);
   const [newCommentText, setNewCommentText] = useState("");
   let { id } = useParams();
+  let id_integer = parseInt(id)  
+
+  let subject 
+
+  function nameTheSubject () {
+    if(id_integer===1){
+      subject = "Body"
+    } else if (id_integer === 2) {
+      subject ="Mind"
+    } else if (id_integer === 3) {
+      subject = "Heart"
+    } else if (id_integer === 4) {
+      subject = "Soul"
+    }
+  }
+  nameTheSubject()
+  
 
 
   useEffect(() => {
@@ -19,7 +38,6 @@ function BoxComment(){
   }
 
   function handleSubmit(event) {
-    console.log(newCommentText);
     fetch(`http://localhost:9292/comments`, {
       method: "POST",
       headers: {
@@ -35,7 +53,6 @@ function BoxComment(){
   }
 
   function handleDelete(comment){
-    console.log(comment);
     fetch(`http://localhost:9292/comments/${comment.id}`, {
       method: "DELETE",
       headers: {
@@ -46,22 +63,32 @@ function BoxComment(){
     .then(resp => setComments(comments.filter(c => c !== comment)))
   }
 
+        
+  let mappedNotes = comments.map(comment => {
+    return (
+      <Notes 
+      key={uuidv4()}
+      comment = {comment}
+      handleDelete = {handleDelete}
+
+       />  
+
+
+    )
+  })
+
   return (
     <>
-      <h2>BoxComment {`${id}`}</h2>
+      <h2 id='subjectTitle'>{subject}</h2>
       <br />
-      <ul>
-        {comments.map(comment => 
-          <div className='todo-row'>
-            {comment.text}
-            <RiCloseCircleLine className="delete-icon" onClick={() => handleDelete(comment)} />
-          </div>
-      )}
-      </ul>
+
       <input placeholder="type here" name="text" className="todo-input" onChange={handleChange} value={newCommentText}/>
       <button onClick={handleSubmit} className="todo-button">
         Add New Comment
       </button>
+      
+      {mappedNotes}
+
     </>
   )
 }

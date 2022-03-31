@@ -1,7 +1,3 @@
-#Sail_Text {
-  color:rgb(241, 220, 132);
-}
-
 #MasterDiv {
   display: flex;
   justify-content: space-evenly;
@@ -25,3 +21,4 @@
 .upvotes {
   font-size:50%;
 }
+
