@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 import { Link } from "react-router-dom"
+import { BiUpvote } from "react-icons/bi";
+import { BiDownvote } from "react-icons/bi";
 
 
 function Box({data, box_id}) {
@@ -30,34 +32,13 @@ function Box({data, box_id}) {
 
 
   return (
-    <>
-        
+    <>  
         <div className="flexbox-item" id={`item${box_id}`}>
         <Link to={`/box/${box_id}`}> <p className="Box_Title">{data.title}</p> </Link>
           <p className='upvotes'>{upvotes}</p>
-          <button onClick={handleUpvote}>Upvote</button>
-          <button onClick={handleDownvote}>Downvote</button>
+          <button className='home_buttons' onClick={handleUpvote}> <BiUpvote/>UPVOTE</button>
+          <button className='home_buttons' onClick={handleDownvote}><BiDownvote/>DOWNVOTE</button>
         </div>
-    
-  
-
-        {/* <div className="flexbox-item" id="item2">
-          <p className="HomeText">Mind</p>
-          <button>Upvote</button>
-        </div>
-      </div>
-
-      <div className="flexbox-container">
-        <div className="flexbox-item" id="item3">
-          <p className="HomeText">Heart</p>
-          <button>Upvote</button>
-        </div>
-
-        <div className="flexbox-item" id="item4">
-          <p className="HomeText">Soul</p>
-          <button>Upvote</button>
-        </div> */}
-    
     </>
   )
 }
