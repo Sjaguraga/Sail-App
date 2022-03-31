@@ -15,11 +15,12 @@
   height: 33vh;
   opacity: 75%;
   font-size: 240%;
-  background: linear-gradient(
-    90deg,
+  background: rgb(176, 196, 222) ;
+  /* background: linear-gradient(
+    
     rgb(255, 248, 220) 0%,
     rgb(176, 196, 222) 100%
-  );
+  ); */
 }
 
 /* #item1,
@@ -32,15 +33,16 @@
 }
 
 .home_buttons {
-  background-color: brown;
+  background-color: rgb(42, 85, 165);
   color: antiquewhite;
   font-family: "Courier New", Courier, monospace;
   font-weight: bolder;
   margin: 5px;
+  /* border:black;  */
 }
 .Box_Title {
   font-family: "Courier New", Courier, monospace;
-  color: brown;
+  color: black;
   padding: 5%;
 }
 
