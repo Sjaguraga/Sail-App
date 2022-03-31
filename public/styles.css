@@ -1,14 +1,19 @@
 #MasterDiv {
   display: flex;
-  justify-content: space-evenly;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   max-width: 54%;
+   margin-left: 25%;
+   margin-top: 2%;
 }
 
 .flexbox-item {
-  width: 43vh;
+  width: 46vh;
   border: 3px solid gray;
-  margin: 5vh;
+  margin: 4vh;
+  /* padding: 1%; */
   background-color: grey;
-  height: 30vh;
+  height: 33vh;
   opacity: 60%;
   font-size: 240%;
 }

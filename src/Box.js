@@ -31,12 +31,14 @@ function Box({data, box_id}) {
 
   return (
     <>
+        
         <div className="flexbox-item" id={`item${box_id}`}>
         <Link to={`/box/${box_id}`}> <p className="Box_Title">{data.title}</p> </Link>
           <p className='upvotes'>{upvotes}</p>
           <button onClick={handleUpvote}>Upvote</button>
           <button onClick={handleDownvote}>Downvote</button>
         </div>
+    
   
 
         {/* <div className="flexbox-item" id="item2">
