@@ -50,6 +50,12 @@ function BoxComment(){
     <>
       <h2>BoxComment {`${id}`}</h2>
       <br />
+
+      <input placeholder="type here" name="text" className="todo-input" onChange={handleChange} value={newCommentText}/>
+      <button onClick={handleSubmit} className="todo-button">
+        Add New Comment
+      </button>
+
       <ul>
         {comments.map(comment => 
           <div className='todo-row'>
@@ -58,10 +64,6 @@ function BoxComment(){
           </div>
       )}
       </ul>
-      <input placeholder="type here" name="text" className="todo-input" onChange={handleChange} value={newCommentText}/>
-      <button onClick={handleSubmit} className="todo-button">
-        Add New Comment
-      </button>
     </>
   )
 }
