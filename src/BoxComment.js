@@ -49,7 +49,8 @@ function BoxComment(){
       },
       body: JSON.stringify({
         text: newCommentText,
-        box_id: id
+        box_id: id,
+        user_id: 2
       })
     })
     .then(resp => resp.json())
