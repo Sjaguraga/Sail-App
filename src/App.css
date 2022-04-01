@@ -180,8 +180,6 @@ h1 {
 #subjectTitle {
   margin: 1.2%;
   font-size: 210%;
-<<<<<<< HEAD
-=======
 }
 
 .By {
@@ -194,5 +192,19 @@ h1 {
   width: fit-content;
   margin-left:28%;
   margin-bottom: -4px;
->>>>>>> 2ab107c06f50a554fdbbcce07ffe8fd9889cfc34
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modal_content {
+  background-color: white;
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+  border: 2px solid black;
 }
