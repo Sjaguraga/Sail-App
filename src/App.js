@@ -7,31 +7,29 @@ import { Route, Routes } from "react-router-dom";
 import NavBar from "./NavBar";
 // import Details from "./Details";
 import CommentList from "./CommentList";
-import { useEffect, useState } from "react";
+import {useState} from "react";
 
 function App() {
+  const [AppToggleVibes, setAppToggleVibes] = useState(false);
 
-  const [boxes, setBoxes] = useState([])
 
-  useEffect(()=> {
-    fetch("http://localhost:9292/boxes")
-    .then(resp => resp.json())
-    .then(data => {
-      setBoxes(data)
-    })
-    },[])
+
+  function appHandleToggle () {
+    setAppToggleVibes(!AppToggleVibes)
+    console.log(AppToggleVibes)
+  }
 
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar appHandleToggle={appHandleToggle} />
 
       <Routes>
         <Route path="/" element={<Home />} />
 
         <Route path="/about" element={<About />} />
 
-        <Route path="/box/:id" element={<BoxComment boxes={boxes} />} />
+        <Route path="/box/:id" element={<BoxComment AppToggleVibes={AppToggleVibes} />} />
         <Route path="/comments_list" element={<CommentList />} />
         <Route path="/comments" element={<CommentList />} />
       </Routes>
