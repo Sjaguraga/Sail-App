@@ -4,13 +4,22 @@ import Notes from './Notes';
 import { v4 as uuidv4 } from "uuid";
 
 
-function BoxComment(){
+function BoxComment({AppToggleVibes}){
   const [comments, setComments] = useState([]);
   const [newCommentText, setNewCommentText] = useState("");
   let { id } = useParams();
   let id_integer = parseInt(id)  
 
+  // const [BoxCommentToggleVibes, setBoxCommentToggleVibes] = useState(false);
+
+
   let subject 
+  // function setTheToggle() {
+  //   setBoxCommentToggleVibes(AppToggleVibes)
+  //   console.log(BoxCommentToggleVibes)
+  // }
+  // setTheToggle()
+  // console.log(AppToggleVibes)
 
   function nameTheSubject () {
     if(id_integer===1){
@@ -72,6 +81,7 @@ function BoxComment(){
   let mappedNotes = comments.map(comment => {
     return (
       <Notes 
+      AppToggleVibes={AppToggleVibes}
       key={uuidv4()}
       comment = {comment}
       handleDelete = {handleDelete}
@@ -82,15 +92,24 @@ function BoxComment(){
     )
   })
 
+  function handleReset(e) {
+    e.preventDefault();
+    setNewCommentText("");
+  }
+
   return (
     <>
+
       <h2 id='subjectTitle'>{subject}</h2>
       <br />
 
+      <form onSubmit={handleReset}>
       <input placeholder="type here" name="text" className="todo-input" onChange={handleChange} value={newCommentText}/>
       <button onClick={handleSubmit} className="todo-button">
         Add New Comment
       </button>
+      </form>
+     
       
       {mappedNotes}
 

@@ -127,7 +127,7 @@ h1 {
     rgb(255, 248, 220) 0%,
     rgba(255, 248, 220, 0.459) 100%
   );
-
+  font-size: large;
   padding: 16px;
   border-radius: 5px;
   width: 45%;
@@ -207,4 +207,52 @@ h1 {
   width: 150px;
   border-radius: 5px;
   border: 2px solid black;
+}
+
+.up-button {
+  background-color: rgb(25, 25, 112);
+  color: white;
+  margin: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.down-button {
+  background-color: rgb(25, 25, 112);
+  color: white;
+  margin: 5px;
+}
+.reset {
+  background-color: rgb(208, 190, 127);
+  margin: 5px;
+}
+.down-button:hover {
+  box-shadow: inset 400px 0 0 0 #3091D6;
+}
+.up-button:hover {
+  box-shadow: inset 400px 0 0 0 #3091D6;
+}
+.reset:hover {
+  box-shadow: inset 400px 0 0 0 #3091D6;
+}
+
+.flexbox-item:hover {
+  cursor: pointer;
+  transform: rotate(0deg) scale(1) translateY(0px);
+  transition: 0.5s all ease;
+  z-index: 400;
+  color: #000000;
+  box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5);
+}
+.flexbox-item:hover {
+  color: #000000;
+  box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5);
+}
+.flexbox-item:hover,
+.flexbox-item:hover ~ .bg {
+  opacity: 60%;
+  background: cornsilk;
+  background: -moz-linear-gradient(-45deg, #00000000 15%, #00000000 100%);
+  background: -webkit-linear-gradient(-45deg, #00000000 15%, #00000000 100%);
+  background: linear-gradient(135deg, #EFEDA1 15%, #00000000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E2A9E5', endColorstr='#2B94E5',GradientType=1 );
 }
